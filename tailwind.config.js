@@ -17,7 +17,9 @@ module.exports = {
         yellow: colors.yellow,
         teal: colors.teal,
         mainBackground: '#1E1D23',
-        searchBackground: '#14262D'
+        searchBackground: '#141217',
+        contentBackground: '#141217',
+        converterBackground: '#0A090D'
       },
       fontFamily: {
         nunito: ['Mulish']
