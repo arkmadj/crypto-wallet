@@ -13,6 +13,10 @@
     @apply flex justify-center;
   }
 
+  .tooltip {
+    @apply absolute h-10 shadow-lg leading-9 text-center rounded-md w-[150px] left-32 pointer-events-none transition-opacity opacity-100 xl:opacity-0 text-black;
+  }
+
   .y-axis {
     @apply border-b border-gray-100 flex items-end justify-end;
   }

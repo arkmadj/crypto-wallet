@@ -60,14 +60,14 @@ const Exchange: React.FC<ExchangeProps> = () => {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <div className="flex-grow px-10 bg-contentBackground rounded-2xl mr-10 h-5/6">
+      <div className="flex-grow px-10 bg-contentBackground rounded-2xl mr-10 h-5/6 absolute left-[10%] xl:left-[13%] w-[85%]">
         <div className="w-full h-full flex space-x-20 py-10">
           <div className="w-2/5 space-y-10">
             {/* <p>Left</p> */}
             <p className="text-white text-2xl font-bold">Wallets</p>
             <ExchangeCoinList coinsData={coinListData} />
           </div>
-          <div className="w-1/2 space-y-10">
+          <div className="w-3/5 space-y-10">
             <Step steps={stepData} />
             <Converter/>
           </div>

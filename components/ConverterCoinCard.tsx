@@ -12,12 +12,12 @@ const ConverterCoinCard: React.FC<ConverterCoinCardProps> = ({
   icon,
 }) => {
   return (
-    <div className="flex justify-between items-center bg-mainBackground w-1/2 rounded-2xl p-5">
+    <div className="flex justify-between items-center bg-mainBackground w-1/2 rounded-2xl p-2 xl:p-5">
       <div>
         <p>{name}</p>
         <p>{subtext}</p>
       </div>
-      <div className="bg-pink-600 flex items-center justify-center text-white font-bold text-3xl rounded-full w-12 h-12">
+      <div className="bg-pink-600 flex items-center justify-center text-white font-bold text-sm xl:text-3xl rounded-xl xl:rounded-full w-5 h-5 xl:w-12 xl:h-12">
         <p>{icon}</p>
       </div>
       <ChevronDownIcon className="text-white h-5 w-5 text-xs" />
