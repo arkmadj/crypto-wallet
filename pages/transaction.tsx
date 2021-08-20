@@ -6,8 +6,7 @@ import {
   ArrowCircleRightIcon,
 } from "@heroicons/react/solid";
 import TransactionTable from "../components/TransactionTable";
-
-import { TransactionType } from "../components/TransactionTable";
+import ChatBox from "../components/ChatBox";
 
 export interface TransactionProps {}
 
@@ -67,13 +66,13 @@ const Transaction: React.FC<TransactionProps> = () => {
       </Head>
 
       <div className="flex-grow px-10 bg-contentBackground rounded-2xl mr-10 h-5/6 absolute left-[10%] xl:left-[13%] w-[80%]">
-        <div className="w-full h-full flex space-x-10 py-10">
-          <div className="w-[55%] space-y-10 rounded-md">
-            <div>
+        <div className="w-full h-full flex py-10">
+          <div className="w-[55%] space-y-10 rounded-md z-10">
+            <div className="px-5">
               <span className="text-white text-2xl font-xs">Guarded </span>
               <span className="text-white text-2xl font-bold">Deals</span>
             </div>
-            <div className="flex space-x-5">
+            <div className="flex space-x-5 px-5">
               <TransactionCard title="Selling">
                 <ArrowCircleRightIcon className="h-12 w-12 text-teal-400" />
               </TransactionCard>
@@ -89,8 +88,9 @@ const Transaction: React.FC<TransactionProps> = () => {
               />
             </div>
           </div>
-          <div className="w-[45%] space-y-10 bg-teal-200">
+          <div className="w-[45%] space-y-[70px]">
             <AmountCard balance={"1.234567891"} />
+            <ChatBox/>
           </div>
         </div>
       </div>

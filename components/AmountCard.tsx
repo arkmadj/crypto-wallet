@@ -11,7 +11,7 @@ const AmountCard: React.FC<AmountCardProps> = ({ balance }) => {
     setCurrency(currency !== "BTC" ? "BTC" : "ETH");
   };
   return (
-    <div className="flex items-center w-full justify-between bg-mainBackground px-5 rounded-full space-x-5">
+    <div className="flex items-center float-right justify-between bg-mainBackground px-5 rounded-full space-x-5 w-[90%]">
       <div className="flex w-1/2 justify-between">
         <span>Amount:</span>
         <span className="text-white font-bold">{`${balance} ${currency}`}</span>

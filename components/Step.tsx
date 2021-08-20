@@ -9,7 +9,7 @@ export interface StepProps {
 
 const Step: React.FC<StepProps> = ({ steps }) => {
   return (
-    <div className="flex space-x-8 lg:bg-red-200 xl:bg-green-100 2xl:bg-blue-300 2xl:space-x-20">
+    <div className="flex space-x-8 2xl:space-x-20">
       {/* <p>OOOPS</p> */}
       {steps.map((step, index) => (
         <div key={index} className="w-1/3">

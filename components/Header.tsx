@@ -36,11 +36,11 @@ const Header = () => {
           <AnnotationIcon className="header-icon" />
           <CalendarIcon className="header-icon" />
         </div>
-        <div className="flex items-center space-x-2">
-          <div>
-            <p className="whitespace-nowrap text-gray-500 text-xs">
+        <div className="flex items-center space-x-3">
+          <div className="mr-3">
+            <span className="whitespace-nowrap text-white text-xs">
               Jun 30,2021
-            </p>
+            </span>
           </div>
           <Image
             className="rounded-full cursor-pointer"
@@ -50,7 +50,7 @@ const Header = () => {
             // layout="fill"
             objectFit="cover"
           />
-          <ChevronDownIcon className="h-5 w-5 text-xs text-gray-500" />
+          <ChevronDownIcon className="h-5 w-5 text-xs text-white" />
         </div>
       </div>
     </div>

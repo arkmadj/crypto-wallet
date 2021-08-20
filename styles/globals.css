@@ -25,3 +25,12 @@
     @apply h-6 w-6 text;
   } */
 }
+
+.invisible-scroll-bar::-webkit-scrollbar {
+  display: none;
+}
+
+.invisible-scroll-bar {
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
+}

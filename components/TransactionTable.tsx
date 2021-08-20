@@ -2,6 +2,7 @@ import {
   ChevronDownIcon,
   DuplicateIcon,
   ArrowCircleRightIcon,
+  ArrowCircleDownIcon,
 } from "@heroicons/react/outline";
 
 export enum TransactionType {
@@ -29,10 +30,10 @@ const TransactionTable: React.FC<TransactionTableProps> = ({
 }) => {
   return (
     <div>
-      <div className="flex justify-between border-b-[1px] border-gray-500">
+      <div className="flex justify-between border-b-[1px] border-gray-500 mx-5">
         {linkHeaders.map((header, index) => (
           <span
-            className="px-10 py-2 rounded-t-md border-b-4 border-opacity-0 hover:border-opacity-100 border-pink-600 -mb-1 hover:bg-pink-600 hover:bg-opacity-20 hover:text-white font-bold"
+            className="px-10 py-2 rounded-t-md border-b-4 border-opacity-0 hover:border-opacity-100 border-pink-600 -mb-1 hover:bg-pink-600 hover:bg-opacity-20 hover:text-white font-bold cursor-pointer"
             key={index}
           >
             {header}
@@ -47,7 +48,7 @@ const TransactionTable: React.FC<TransactionTableProps> = ({
           </div>
         ))}
       </div> */}
-      <div className="grid grid-cols-12 mt-10 space-x-5 border-b-[1px] border-gray-500">
+      <div className="grid grid-cols-12 mt-10 space-x-5 border-b-[1px] border-gray-500 mx-5">
         <div className="flex items-center py-2 col-span-4 space-x-2">
           <span>{filterHeaders[0]}</span>
           <ChevronDownIcon className="h-5 w-5" />
@@ -65,10 +66,10 @@ const TransactionTable: React.FC<TransactionTableProps> = ({
           <ChevronDownIcon className="h-5 w-5" />
         </div>
       </div>
-      <div className="overflow-y-auto h-[450px]">
+      <div className="invisible-scroll-bar h-[400px] overflow-x-auto overflow-y-visible">
         {tableData.map((data, index) => (
           <div
-            className="grid grid-cols-12 font-bold py-5 px-1 rounded-l-2xl space-x-5 hover:bg-converterBackground"
+            className="grid grid-cols-12 font-bold p-5 rounded-l-2xl space-x-5 hover:bg-converterBackground hover:border hover:border-gray-600 hover:border-r-0 hover:w-[795px] hover:shadow-lg"
             key={index}
           >
             <div className="col-span-4 flex space-x-8 items-center">
@@ -94,9 +95,14 @@ const TransactionTable: React.FC<TransactionTableProps> = ({
               <span>{data.exchangeRate} USD/BTC</span>
               <span className="font-thin text-sm">30.06.2021 19:58</span>
             </div>
-            <ArrowCircleRightIcon className="w-5 h-5" />
+            <div className="flex items-center">
+              <ArrowCircleRightIcon className="w-5 h-5" />
+            </div>
           </div>
         ))}
+      </div>
+      <div className="flex items-center justify-center mt-3">
+        <ArrowCircleDownIcon className="h-10 w-10 text-green-400" />
       </div>
     </div>
   );
