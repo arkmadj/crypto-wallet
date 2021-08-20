@@ -11,12 +11,12 @@ const AmountCard: React.FC<AmountCardProps> = ({ balance }) => {
     setCurrency(currency !== "BTC" ? "BTC" : "ETH");
   };
   return (
-    <div className="flex items-center float-right justify-between bg-mainBackground px-5 rounded-full space-x-5 w-[90%]">
-      <div className="flex w-1/2 justify-between">
+    <div className="flex items-center float-right justify-between bg-mainBackground px-5 rounded-full space-x-5 xl:w-[90%] w-full md:bg-purple-800 lg:bg-blue-600 xl:bg-red-600 2xl:bg-green-700">
+      <div className="flex w-3/4 2xl:w-1/2 justify-between">
         <span>Amount:</span>
         <span className="text-white font-bold">{`${balance} ${currency}`}</span>
       </div>
-      <div className="flex w-1/2 items-center justify-between">
+      <div className="flex w-1/4 2xl:w-1/2 items-center justify-between">
         <span
           className="text-pink-600 cursor-pointer"
           onClick={() => changeCurrency()}

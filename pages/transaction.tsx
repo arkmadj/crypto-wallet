@@ -65,7 +65,7 @@ const Transaction: React.FC<TransactionProps> = () => {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <div className="flex-grow px-10 bg-contentBackground rounded-2xl mr-10 h-5/6 absolute left-[10%] xl:left-[13%] w-[80%]">
+      <div className="px-10 bg-contentBackground rounded-2xl mr-10 h-5/6 absolute left-[10%] xl:left-[13%] w-[85%]">
         <div className="w-full h-full flex py-10">
           <div className="w-[55%] space-y-10 rounded-md z-10">
             <div className="px-5">

@@ -6,7 +6,7 @@
 
 @layer components {
   .header-icon {
-    @apply bg-black rounded-full h-6 w-6 text-gray-500 p-1 ring-1 ring-gray-500 cursor-pointer;
+    @apply bg-black rounded-full h-10 w-10 text-gray-500 p-2 ring-1 ring-gray-500 cursor-pointer;
   }
 
   .x-axis {

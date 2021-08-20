@@ -6,7 +6,7 @@ export interface LayoutProps {}
 const Layout: React.FC<LayoutProps> = ({ children }) => {
     console.log({children})
   return (
-    <div className="h-screen bg-mainBackground w-screen overflow-y-hidden font-nunito text-gray-400">
+    <div className="h-screen bg-mainBackground w-screen overflow-x-hidden overflow-y-hidden font-nunito text-gray-400">
       <Header />
       <main className="flex h-full w-full">
         <SideBar />

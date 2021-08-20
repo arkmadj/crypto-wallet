@@ -6,10 +6,10 @@ import {
 } from "@heroicons/react/outline";
 import { ChevronDownIcon } from "@heroicons/react/solid";
 import Image from "next/image";
-
+import Link from "next/link";
 const Header = () => {
   return (
-    <div className="sticky top-0 bg-mainBackground flex items-center p-10">
+    <div className="sticky top-0 bg-mainBackground flex items-center py-10 px-20">
       {/* Left */}
       <div className="flex items-center">
         <div>
@@ -42,14 +42,16 @@ const Header = () => {
               Jun 30,2021
             </span>
           </div>
-          <Image
-            className="rounded-full cursor-pointer"
-            src="/images/profile.png"
-            width="40"
-            height="40"
-            // layout="fill"
-            objectFit="cover"
-          />
+          <Link href="/account">
+            <Image
+              className="rounded-full cursor-pointer"
+              src="/images/profile.png"
+              width="40"
+              height="40"
+              // layout="fill"
+              objectFit="cover"
+            />
+          </Link>
           <ChevronDownIcon className="h-5 w-5 text-xs text-white" />
         </div>
       </div>

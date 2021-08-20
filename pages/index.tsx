@@ -67,11 +67,11 @@ export default function Home() {
       {/* <div className="h-screen bg-gradient-to-br from-blue-500 via-gray-500 to-red-500 bg-opacity-30 flex items-center justify-center"> */}
       {/* <main className="flex h-full w-full">
         <SideBar /> */}
-        <div className="flex-grow px-10 left-[13%] absolute w-[87%]">
+        <div className="px-10 left-[10%] xl:left-[13%] absolute w-[85%]">
           <p className="text-white text-2xl font-bold">Dashboard</p>
           <CardList />
-          <div className="w-full h-full flex space-x-20 py-10">
-            <div className="w-1/2">
+          <div className="w-full h-full flex space-x-20 md:py-5 py-10">
+            <div className="w-3/5">
               <LineGraph />
               <ActivityList data={activityData} />
             </div>

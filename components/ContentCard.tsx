@@ -2,9 +2,9 @@ import { DotsVerticalIcon, AnnotationIcon } from "@heroicons/react/outline";
 
 export interface ContentCardProps {}
 
-const ContentCard: React.SFC<ContentCardProps> = () => {
+const ContentCard: React.FC<ContentCardProps> = () => {
   return (
-    <div className="ring-1 ring-gray-600 p-5 rounded-2xl bg-black shadow-2xl">
+    <div className="ring-1 ring-gray-600 p-5 md:p-3 rounded-2xl bg-black shadow-2xl">
       <div className="flex justify-end">
         <DotsVerticalIcon className="h-5 w-5" />
       </div>

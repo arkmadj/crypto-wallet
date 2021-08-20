@@ -33,7 +33,7 @@ const TransactionTable: React.FC<TransactionTableProps> = ({
       <div className="flex justify-between border-b-[1px] border-gray-500 mx-5">
         {linkHeaders.map((header, index) => (
           <span
-            className="px-10 py-2 rounded-t-md border-b-4 border-opacity-0 hover:border-opacity-100 border-pink-600 -mb-1 hover:bg-pink-600 hover:bg-opacity-20 hover:text-white font-bold cursor-pointer"
+            className="truncate lg:px-3 xl:px-5 2xl:px-10 py-2 rounded-t-md border-b-4 border-opacity-0 hover:border-opacity-100 border-pink-600 -mb-1 hover:bg-pink-600 hover:bg-opacity-20 hover:text-white font-bold cursor-pointer"
             key={index}
           >
             {header}
@@ -49,7 +49,7 @@ const TransactionTable: React.FC<TransactionTableProps> = ({
         ))}
       </div> */}
       <div className="grid grid-cols-12 mt-10 space-x-5 border-b-[1px] border-gray-500 mx-5">
-        <div className="flex items-center py-2 col-span-4 space-x-2">
+        <div className="flex items-center py-1 xl:py-2 col-span-4 space-x-2">
           <span>{filterHeaders[0]}</span>
           <ChevronDownIcon className="h-5 w-5" />
         </div>
