@@ -69,7 +69,7 @@ const TransactionTable: React.FC<TransactionTableProps> = ({
       <div className="invisible-scroll-bar h-[400px] overflow-x-auto overflow-y-visible">
         {tableData.map((data, index) => (
           <div
-            className="grid grid-cols-12 font-bold p-5 rounded-l-2xl space-x-5 hover:bg-converterBackground hover:border hover:border-gray-600 hover:border-r-0 hover:w-[795px] hover:shadow-lg"
+            className="grid grid-cols-12 font-bold p-5 rounded-l-2xl space-x-5 hover:bg-converterBackground hover:border hover:border-gray-600 hover:border-r-0 hover:w-[101%] hover:shadow-lg"
             key={index}
           >
             <div className="col-span-4 flex space-x-8 items-center">

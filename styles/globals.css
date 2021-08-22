@@ -14,16 +14,20 @@
   }
 
   .tooltip {
-    @apply absolute h-10 shadow-lg leading-9 text-center rounded-md w-[150px] left-32 pointer-events-none transition-opacity opacity-100 xl:opacity-0 text-black;
+    @apply absolute h-10 shadow-xl leading-9 text-center rounded-md w-[150px] left-32 pointer-events-none transition duration-500 ease-in-out text-black transform -translate-y-1/2;
   }
 
   .y-axis {
     @apply border-b border-gray-100 flex items-end justify-end;
   }
 
-  /* .side-bar-icon {
-    @apply h-6 w-6 text;
-  } */
+  .side-bar-menu {
+    @apply flex transition duration-500 ease-in-out hover:bg-opacity-30 rounded-sm cursor-pointer h-10;
+  }
+
+  .side-bar-menu-pill {
+    @apply h-full w-2 rounded-full justify-start transform -translate-y-1/2 transition duration-500 ease-in-out;
+  }
 }
 
 .invisible-scroll-bar::-webkit-scrollbar {

@@ -9,22 +9,29 @@ import {
   CogIcon,
 } from "@heroicons/react/outline";
 import { useState } from "react";
+import { connect } from "react-redux";
+import { setActivePage } from "../redux/actions/activePageActions";
 
-export interface SideBarProps {}
+export interface SideBarProps {
+  activePage: string;
+  setActivePage: any;
+}
 
-const SideBar: React.FC<SideBarProps> = () => {
-  const zero = "blue";
+const SideBar: React.FC<SideBarProps> = ({ activePage, setActivePage }) => {
 
-  const [activeToolbar, setActiveToolBar] = useState("");
-  const [activeToolbarStyle, setActiveToolBarStyle] = useState({});
+  const currPage = activePage.activePage;
+  const [hoverMenu, setHoverMenu] = useState("");
 
   const handleMouseEnter = (sideBarMenu: string) => {
-    setActiveToolBar(activeToolbar !== sideBarMenu ? sideBarMenu : "");
-    // setActiveToolBarStyle({opacity: 1, top: "50%")
+    setHoverMenu(hoverMenu !== sideBarMenu ? sideBarMenu : "");
   };
 
   const handleMouseLeave = () => {
-    setActiveToolBar("");
+    setHoverMenu("");
+  };
+
+  const handleClick = (sideBarMenu: string) => {
+    setActivePage(sideBarMenu);
   };
 
   return (
@@ -33,92 +40,118 @@ const SideBar: React.FC<SideBarProps> = () => {
       <div className="space-y-6">
         <Link href="/">
           <div
-            className="flex bg-pink-200 bg-opacity-30 h-10 rounded-sm cursor-pointer"
+            className={`bg-pink-200 ${
+              currPage === "dashboard" ? "bg-opacity-30" : "bg-opacity-0"
+            } side-bar-menu`}
             onMouseEnter={() => handleMouseEnter("dashboard")}
             onMouseLeave={() => handleMouseLeave()}
+            onClick={() => handleClick("dashboard")}
           >
-            <div className="h-full xl:w-2 bg-pink-600 xl:rounded-full justify-start"></div>
+            <div
+              className={`bg-pink-600 side-bar-menu-pill ${
+                currPage === "dashboard" ? "opacity-100 translate-y-0" : "opacity-0"
+              }`}
+            ></div>
             <div className="flex flex-grow items-center ml-10">
               <DesktopComputerIcon className="w-8 h-8 text-pink-600" />
               <p className="ml-3 opacity-0 xl:opacity-100">Dashboard</p>
             </div>
-            {activeToolbar == "dashboard" && (
-              <span
-                style={{ transition: "all 0.5s ease" }}
-                className="tooltip bg-pink-200"
-              >
-                Dashboard
-              </span>
-            )}
+            <span
+              className={`tooltip bg-pink-200 ${
+                hoverMenu === "dashboard"
+                  ? "opacity-100 translate-y-0 xl:opacity-0"
+                  : "opacity-0"
+              }`}
+            >
+              Dashboard
+            </span>
           </div>
         </Link>
         <Link href="">
           <div
-            className="flex hover:bg-orange-200 hover:bg-opacity-30 h-10 rounded-sm cursor-pointer transition duration-500 ease-in-out"
+            className={`bg-orange-200 ${
+              currPage === "wallet" ? "bg-opacity-30" : "bg-opacity-0"
+            } side-bar-menu`}
             onMouseEnter={() => handleMouseEnter("wallet")}
             onMouseLeave={() => handleMouseLeave()}
+            onClick={() => handleClick("wallet")}
           >
-            {activeToolbar == "wallet" && (
-              <div className="h-full w-2 bg-orange-600 rounded-full justify-start"></div>
-            )}
+            <div
+              className={`bg-orange-600 side-bar-menu-pill ${
+                currPage === "wallet" ? "opacity-100 transform translate-y-0" : "opacity-0"
+              }`}
+            ></div>
             <div className="flex flex-grow items-center ml-10">
               <CreditCardIcon className="w-8 h-8 text-orange-700" />
               <p className="ml-3 opacity-0 xl:opacity-100">My Wallet</p>
             </div>
-            {activeToolbar == "wallet" && (
-              <span
-                style={{ transition: "all 0.5s ease" }}
-                className="tooltip bg-orange-200"
-              >
-                My Wallet
-              </span>
-            )}
+            <span
+              className={`tooltip bg-orange-200 ${
+                hoverMenu === "wallet"
+                  ? "opacity-100 translate-y-0 xl:opacity-0"
+                  : "opacity-0"
+              }`}
+            >
+              My Wallet
+            </span>
           </div>
         </Link>
         <Link href="/transaction">
           <div
-            className="flex hover:bg-yellow-200 hover:bg-opacity-30 h-10 rounded-sm cursor-pointer transition duration-500 ease-in-out"
+            className={`bg-yellow-200 hover:bg-opacity-30 side-bar-menu ${
+              currPage === "transaction" ? "bg-opacity-30" : "bg-opacity-0"
+            }`}
             onMouseEnter={() => handleMouseEnter("transaction")}
             onMouseLeave={() => handleMouseLeave()}
+            onClick={() => handleClick("transaction")}
           >
-            {activeToolbar == "transaction" && (
-              <div className="h-full w-2 bg-yellow-600 rounded-full justify-start"></div>
-            )}
+            <div
+              className={`bg-yellow-600 side-bar-menu-pill ${
+                currPage === "transaction" ? "opacity-100 translate-y-0" : "opacity-0"
+              }`}
+            ></div>
             <div className="flex flex-grow items-center ml-10">
               <CurrencyDollarIcon className="w-8 h-8 text-yellow-600" />
               <p className="ml-3 opacity-0 xl:opacity-100">Transaction</p>
             </div>
-            {activeToolbar == "transaction" && (
-              <span
-                style={{ transition: "all 0.5s ease" }}
-                className="tooltip bg-yellow-200"
-              >
-                Transaction
-              </span>
-            )}
+            <span
+              className={`tooltip bg-yellow-200 ${
+                hoverMenu === "transaction"
+                  ? "opacity-100 translate-y-0 xl:opacity-0"
+                  : "opacity-0"
+              }`}
+            >
+              Transaction
+            </span>
           </div>
         </Link>
         <Link href="/exchange">
           <div
-            className="flex hover:bg-teal-200 hover:bg-opacity-30 h-10 rounded-sm cursor-pointer transition duration-500 ease-in-out"
+            className={`bg-teal-200 hover:bg-opacity-30 ${
+              currPage === "exchange" ? "bg-opacity-30" : "bg-opacity-0"
+            } side-bar-menu`}
             onMouseEnter={() => handleMouseEnter("exchange")}
             onMouseLeave={() => handleMouseLeave()}
+            onClick={() => handleClick("exchange")}
           >
-            {activeToolbar == "exchange" && (
-              <div className="h-full w-2 bg-teal-600 rounded-full justify-start"></div>
-            )}
+            <div
+              className={`bg-teal-600 side-bar-menu-pill ${
+                currPage === "exchange" ? "opacity-100 translate-y-0" : "opacity-0"
+              }`}
+            ></div>
             <div className="flex flex-grow items-center ml-10">
               <RefreshIcon className="w-8 h-8 text-teal-300" />
               <p className="ml-3 opacity-0 xl:opacity-100">Exchange</p>
             </div>
-            {activeToolbar == "exchange" && (
-              <span
-                style={{ transition: "all 0.5s ease" }}
-                className="tooltip bg-teal-200"
-              >
-                Exchange
-              </span>
-            )}
+            <span
+              className={`tooltip bg-teal-200 ${
+                hoverMenu === "exchange"
+                  ? "opacity-100 translate-y-0 xl:opacity-0"
+                  : "opacity-0"
+              }`}
+            >
+              Exchange
+            </span>
           </div>
         </Link>
       </div>
@@ -156,4 +189,18 @@ const SideBar: React.FC<SideBarProps> = () => {
   );
 };
 
-export default SideBar;
+const mapStateToProps = (state: any) => {
+  return {
+    activePage: state.activePage,
+  };
+};
+
+const mapDispatchToProps = (dispatch: any) => {
+  return {
+    setActivePage: (page: string) => {
+      dispatch(setActivePage(page));
+    },
+  };
+};
+
+export default connect(mapStateToProps, mapDispatchToProps)(SideBar);
