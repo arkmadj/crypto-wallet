@@ -13,7 +13,7 @@ import { connect } from "react-redux";
 import { setActivePage } from "../redux/actions/activePageActions";
 
 export interface SideBarProps {
-  activePage: string;
+  activePage: any;
   setActivePage: any;
 }
 
