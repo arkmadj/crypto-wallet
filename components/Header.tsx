@@ -10,7 +10,7 @@ import Link from "next/link";
 import { connect } from "react-redux";
 import { setActivePage } from "../redux/actions/activePageActions";
 export interface HeaderProps {
-  activePage: string;
+  activePage: any;
   setActivePage: any;
 }
 
@@ -79,7 +79,9 @@ const Header: React.FC<HeaderProps> = ({ activePage, setActivePage }) => {
               </div>
               <div
                 className={`flex-shrink h-3 bg-orange-700 rounded-lg transform -translate-x-1/2 transition duration-500 ease-in-out ${
-                  currPage === "account" ? "opacity-100 translate-x-0" : "opacity-0"
+                  currPage === "account"
+                    ? "opacity-100 translate-x-0"
+                    : "opacity-0"
                 }`}
               ></div>
             </div>
